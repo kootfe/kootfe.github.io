@@ -7,6 +7,9 @@
   --primary-color: #ff4f81;
 }
 
+#down {
+    font-size: 20px;
+}
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
