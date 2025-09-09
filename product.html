@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="product.css">
+  <title>Product Details</title>
+</head>
+<body>
+  <header>
+    <h1 id="product-title">Product</h1>
+    <nav>
+      <a href="index.html">Home</a> | 
+      <a href="products.html">Products</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>README</h2>
+    <div id="readme" style="white-space: pre-wrap;">Loading...</div>
+
+    <h2>Downloads</h2>
+    <ul id="downloads"></ul>
+  </main>
+  <script>
+const urlParams = new URLSearchParams(window.location.search);
+const name = urlParams.get('name');
+
+let repoMap = {
+  "NekoNeko": "kootfe/NekoNekoReEncode",
+  "Game": "kootfe/game"
+};
+
+const repo = repoMap[name];
+
+function decodeBase64(str) {
+    str = str.replace(/-/g, '+').replace(/_/g, '/');
+    while (str.length % 4) str += '=';
+    return atob(str);
+}
+
+if (repo) {
+  // Fetch README
+  fetch(`https://api.github.com/repos/${repo}/readme`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.content) {
+        let readme = decodeBase64(data.content);
+        document.getElementById('readme').textContent = readme;
+      } else {
+        document.getElementById('readme').textContent = 'README not found.';
+      }
+    });
+
+  // Fetch releases + add source code download
+  fetch(`https://api.github.com/repos/${repo}/releases`)
+    .then(res => res.json())
+    .then(releases => {
+      const ul = document.getElementById('downloads');
+
+      if (Array.isArray(releases) && releases.length) {
+        releases.forEach(r => {
+          r.assets.forEach(a => {
+            let li = document.createElement('li');
+            li.innerHTML = `<a href="${a.browser_download_url}" target="_blank">${a.name}</a>`;
+            ul.appendChild(li);
+          });
+        });
+      } else {
+        ul.innerHTML = '<li>No releases found.</li>';
+      }
+
+      // Always add source code download
+      let li = document.createElement('li');
+      li.innerHTML = `<a href="https://github.com/${repo}/archive/refs/heads/main.zip" target="_blank">Download Source (ZIP)</a>`;
+      ul.appendChild(li);
+    });
+
+  document.getElementById('product-title').textContent = name;
+}
+</script>
+
+  </script>
+</body>
+</html>
+
