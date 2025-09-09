@@ -1,86 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="product.css">
-  <title>Product Details</title>
-</head>
-<body>
-  <header>
-    <h1 id="product-title">Product</h1>
-    <nav>
-      <a href="index.html">Home</a> | 
-      <a href="products.html">Products</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="product.css">
+        <title>Product Details</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="product-title">Product</h1>
+            <nav>
+                <a href="index.html">Home</a> | 
+                <a href="products.html">Products</a>
+            </nav>
+        </header>
 
-  <main class="container">
-    <h2>README</h2>
-    <div id="readme" style="white-space: pre-wrap;">Loading...</div>
+        <main class="container">
+            <h2>README</h2>
+            <div id="readme" style="white-space: pre-wrap;">Loading...</div>
 
-    <h2>Downloads</h2>
-    <ul id="downloads"></ul>
-  </main>
-  <script>
-const urlParams = new URLSearchParams(window.location.search);
-const name = urlParams.get('name');
+            <h2>Downloads</h2>
+            <ul id="downloads"></ul>
+        </main>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            let name = urlParams.get('name') || '';
 
-let repoMap = {
-  "NekoNeko": "kootfe/NekoNekoReEncode",
-  "Game": "kootfe/game"
-};
+            // Decode URL-encoded strings safely
+            name = decodeURIComponent(name);
 
-const repo = repoMap[name];
+            let repoMap = {
+                "NekoNeko": "kootfe/NekoNekoReEncode",
+                "Game": "kootfe/game"
+            };
 
-function decodeBase64(str) {
-    str = str.replace(/-/g, '+').replace(/_/g, '/');
-    while (str.length % 4) str += '=';
-    return atob(str);
-}
+            // If name contains extra stuff like "Game:39", normalize it
+            let normalizedName = name.split(':')[0];
 
-if (repo) {
-  // Fetch README
-  fetch(`https://api.github.com/repos/${repo}/readme`)
-    .then(res => res.json())
-    .then(data => {
-      if (data.content) {
-        let readme = decodeBase64(data.content);
-        document.getElementById('readme').textContent = readme;
-      } else {
-        document.getElementById('readme').textContent = 'README not found.';
-      }
-    });
+            const repo = repoMap[normalizedName];
 
-  // Fetch releases + add source code download
-  fetch(`https://api.github.com/repos/${repo}/releases`)
-    .then(res => res.json())
-    .then(releases => {
-      const ul = document.getElementById('downloads');
+            function decodeBase64(str) {
+                try {
+                    str = str.replace(/-/g, '+').replace(/_/g, '/');
+                    while (str.length % 4) str += '=';
+                    return atob(str);
+                } catch (e) {
+                    console.error('Base64 decode error:', e);
+                    return '';
+                }
+            }
 
-      if (Array.isArray(releases) && releases.length) {
-        releases.forEach(r => {
-          r.assets.forEach(a => {
-            let li = document.createElement('li');
-            li.innerHTML = `<a href="${a.browser_download_url}" target="_blank">${a.name}</a>`;
-            ul.appendChild(li);
-          });
-        });
-      } else {
-        ul.innerHTML = '<li>No releases found.</li>';
-      }
+            if (repo) {
+                document.getElementById('product-title').textContent = name;
 
-      // Always add source code download
-      let li = document.createElement('li');
-      li.innerHTML = `<a href="https://github.com/${repo}/archive/refs/heads/main.zip" target="_blank">Download Source (ZIP)</a>`;
-      ul.appendChild(li);
-    });
+                // Fetch README
+                fetch(`https://api.github.com/repos/${repo}/readme`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.content) {
+                            const readme = decodeBase64(data.content);
+                            document.getElementById('readme').textContent = readme || 'Failed to decode README.';
+                        } else {
+                            document.getElementById('readme').textContent = 'README not found.';
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        document.getElementById('readme').textContent = 'Error fetching README.';
+                    });
 
-  document.getElementById('product-title').textContent = name;
-}
-</script>
+                // Fetch releases + add source code download
+                fetch(`https://api.github.com/repos/${repo}/releases`)
+                    .then(res => res.json())
+                    .then(releases => {
+                        const ul = document.getElementById('downloads');
+                        ul.innerHTML = ''; // Clear loading text
 
-  </script>
-</body>
+                        if (Array.isArray(releases) && releases.length) {
+                            releases.forEach(r => {
+                                r.assets.forEach(a => {
+                                    const li = document.createElement('li');
+                                    li.innerHTML = `<a href="${a.browser_download_url}" target="_blank">${a.name}</a>`;
+                                    ul.appendChild(li);
+                                });
+                            });
+                        } else {
+                            ul.innerHTML = '<li>No releases found.</li>';
+                        }
+
+                        // Always add source code download
+                        const li = document.createElement('li');
+                        li.innerHTML = `<a href="https://github.com/${repo}/archive/refs/heads/main.zip" target="_blank">Download Source (ZIP)</a>`;
+                        ul.appendChild(li);
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        document.getElementById('downloads').innerHTML = '<li>Error fetching releases.</li>';
+                    });
+
+            } else {
+                document.getElementById('product-title').textContent = 'Unknown Product';
+                document.getElementById('readme').textContent = 'Invalid product name.';
+                document.getElementById('downloads').innerHTML = '<li>Cannot fetch downloads.</li>';
+            }
+        </script>
+    </body>
 </html>
 
