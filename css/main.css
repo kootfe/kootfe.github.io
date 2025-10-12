@@ -1,0 +1,58 @@
+:root {
+    --jbf: "JetBrains Mono", monospace;
+}
+
+body {
+    font-family: var(--jbf);
+    color: white;
+    background-color: #141616;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: #ff4444;
+    outline: none;
+}
+
+.linka {
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.linka:hover {
+    color: #ff4f81;   
+    text-shadow:
+        0 0 5px #fa4a75,
+        0 0 10px #fa4a74,
+        0 0 20px #fa4a75;
+}
+
+main {
+    flex: 1 0 auto;
+    min-height: 0;
+}
+
+footer {
+    margin-top: auto;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 446px) {
+    main {
+        flex: 0 0 auto;
+    }
+
+    html,body {
+        height: auto;
+    }
+}

@@ -1,0 +1,33 @@
+.oc {
+    color: orange;
+    font-weight: bold;
+}
+
+.sect {
+    margin: 2rem;
+    border-radius: 10px;
+    font-family: "JetBrains Mono", monospace;
+    color: #e0e0e0;
+}
+
+.sect h3 {
+    color: #ff0044;
+    margin-bottom: 0.5rem;
+}
+
+.sect ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.sect ul li {
+    margin: 0.3rem 0;
+}
+
+.sect ul li ul {
+    padding-left: 1.5rem;
+    border-left: 1px dashed #444;
+    margin-top: 0.2rem;
+}
+
+
