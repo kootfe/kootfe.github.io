@@ -8,6 +8,11 @@ const projects = [
         title: "Tutorial Game",
         desc: "A game I made to learn things — ended up on a dusty shelf. Still check on it from time to time though.",
         path: "game"
+    },
+    {
+        title: "Log",
+        desc: "Probaly overengineered logger",
+        path: "log"
     }
 ];
 

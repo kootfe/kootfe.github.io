@@ -1,6 +1,7 @@
 const projects = Object.create(null);
 projects["plcli"] = "Neko-Neko-Labs/plutonium_cli/master";
 projects["game"] = "kootfe/game/main";
+projects["log"] = "kootfe/log/main";
 
 const main_path = "https://raw.githubusercontent.com/";
 
