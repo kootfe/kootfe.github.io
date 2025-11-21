@@ -1,0 +1,94 @@
+#rdm {
+    background-color: rgba(20, 20, 20, 0.95);
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    border-left: 4px solid #ff0022;
+    padding: 1rem 1.5rem;
+    max-width: 900px;
+    margin: 1rem auto;
+    line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    margin: 1rem 0 0.5rem 0;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #ff5555;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #ffaa00;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #55ff55;
+}
+
+/* Horizontal lines */
+hr {
+    border: none;
+    border-top: 2px solid #333;
+    margin: 1rem 0;
+}
+
+/* Lists */
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    border: 1px solid #555;
+    padding: 0.5rem 0.8rem;
+    text-align: left;
+}
+
+th {
+    background-color: #222;
+    color: #ffaa00;
+}
+
+td {
+    background-color: #111;
+}
+
+/* Code / special notes */
+blockquote {
+    background-color: rgba(255, 0, 0, 0.1);
+    border-left: 3px solid #ff0022;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: #ccc;
+}
+
+/* Inline code / keywords */
+strong {
+    color: #ffcc00;
+}
+
+/* Optional fancy touches */
+li::before {
+    content: "• ";
+    color: #ff0022;
+}
