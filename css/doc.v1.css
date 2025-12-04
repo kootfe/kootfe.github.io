@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    border: 1px solid #555;
+    padding: 0.5rem 0.8rem;
+    text-align: left;
+}
+
+th {
+    background-color: #222;
+    color: #ffaa00;
+}
+
+td {
+    background-color: #111;
+}
+
+.docelm {
+    background-color: #111111ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,0,34,0.2);
+    padding: 0.1rem 0.5rem;
+    margin: 5px 10px;
+}
+
