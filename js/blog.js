@@ -1,19 +1,9 @@
 const projects = [
     {
-        title: "PlutoniumCLI",
-        desc: "Supreme CLI QoL tool for all nerds out there.",
-        path: "plcli"
+        title: "How i use NeoVim?",
+        desc: "I tend to code fast thanks to nvim, Let me show you how i do!",
+        path: "neovim"
     },
-    {
-        title: "Tutorial Game",
-        desc: "A game I made to learn things — ended up on a dusty shelf. Still check on it from time to time though.",
-        path: "game"
-    },
-    {
-        title: "Log",
-        desc: "Probaly overengineered logger",
-        path: "log"
-    }
 ];
 
 const container = document.getElementById("pjs");
@@ -30,10 +20,11 @@ if (!container) {
                 <hr>
             </div>
             <p class="desc">${desc}</p>
-            <a class="btn linka" href="prj.html?pj=${encodeURIComponent(path)}">Go To Project</a>
+            <a class="btn linka" href="/pages/blog/${encodeURIComponent(path)}">Go To Post</a>
         `;
 
         container.appendChild(div);
     });
 }
+
 
