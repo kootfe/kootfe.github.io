@@ -4,6 +4,11 @@ const projects = [
         desc: "I tend to code fast thanks to nvim, Let me show you how i do!",
         path: "neovim"
     },
+    {
+        title: "Dumb linux commands.",
+        desc: "Weird linux/posix commands exist in shell... They are dumb.",
+        path: "lnxc"
+    },
 ];
 
 const container = document.getElementById("pjs");
