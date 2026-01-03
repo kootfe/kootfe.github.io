@@ -21,6 +21,7 @@
                     <a href="/" class="nav">Home</a>
                     <a href="/pages/abtme" class="nav">About Me</a>
                     <a href="/pages/roadmap" class="nav">Roadmap</a>
+                    <a href="/pages/blogs" class="nav">Blogs</a>
                     <a href="/pages/projects" class="nav">Projects</a>
                 </div>
                 <a href="/pages/menu" class="mobile-nav nav">Menu</a>
@@ -58,7 +59,7 @@
                         <code>Outputs the filename from a path. (/path/to/file.mp69 → file.mp69)</code>
                     </li>
                     <li><h3>dirname:</h3>
-                        <code>Opposite of <pre class="md">basename</pre>: returns the directory path. (/path/to/file → /path/to)</code>
+                        <code>Opposite of <span class="md">basename</span>: returns the directory path. (/path/to/file → /path/to)</code>
                     </li>
                     <li><h3>more:</h3>
                         <code>Displays file contents one screen at a time. Less is generally better.</code>
@@ -74,9 +75,9 @@
                     </li>
                     <li><h3>nice:</h3>
                         <code>
-                            Sets the priority of a command. Usage: <pre class="md">nice -n &lt;priority&gt; &lt;command&gt;</pre>  
+                            Sets the priority of a command. Usage: <span class="md">nice -n priority command;</span>  
                             Lower the number → higher priority. Only root can use negative niceness. Example:  
-                            <pre class="md">nice -n 5 discord &amp;&amp; nice -n 15 steam</pre>  
+                            <span class="md">nice -n 5 discord &amp;&amp; nice -n 15 steam</span>  
                             Discord gets higher CPU priority than Steam.
                         </code>
                     </li>
@@ -95,7 +96,7 @@
                     <li><h3>xargs:</h3>
                         <code>
                             Takes output from one command and passes it as arguments to another. Example:  
-                            <pre class="md">echo "file1 file2" | xargs rm</pre>  
+                            <span class="md">echo "file1 file2" | xargs rm</span>  
                             Unlike a simple pipe, some commands (like rm) need arguments, not stdin input.
                         </code>
                     </li>

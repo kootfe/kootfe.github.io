@@ -9,6 +9,11 @@ const projects = [
         desc: "Weird linux/posix commands exist in shell... They are dumb.",
         path: "lnxc"
     },
+    {
+        title: "Why 1 + 1 = 2?.",
+        desc: "A look into some math and philosophy.",
+        path: "onepone"
+    },
 ];
 
 const container = document.getElementById("pjs");
