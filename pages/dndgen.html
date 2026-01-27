@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Koofte</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/navbar.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <h1 id="changeTitle" class="title">Kittens & Pillows</h1>
+                <div class="navelements">
+                    <a href="/" class="nav">Home</a>
+                    <a href="/pages/abtme" class="nav">About Me</a>
+                    <a href="/pages/roadmap" class="nav">Roadmap</a>
+                    <a class="nav" href="/pages/projects">Projects</a>
+                </div>
+                <a href="/pages/menu" class="mobile-nav nav">Menu</a>
+            </div>
+            <hr>
+        </header>
+        <main>
+            <h2>Stats (Point Buy)</h2>
+            <p>Points left: <span id="points">27</span></p>
+            <div id="stats">
+                <label>STR: <input type="number" class="stat" id="STR" value="8" min="8" max="15"></label>
+                <label>DEX: <input type="number" class="stat" id="DEX" value="8" min="8" max="15"></label>
+                <label>CON: <input type="number" class="stat" id="CON" value="8" min="8" max="15"></label>
+                <label>INT: <input type="number" class="stat" id="INT" value="8" min="8" max="15"></label>
+                <label>WIS: <input type="number" class="stat" id="WIS" value="8" min="8" max="15"></label>
+                <label>CHA: <input type="number" class="stat" id="CHA" value="8" min="8" max="15"></label>
+            </div>
+
+            <label>Background:
+                <select id="bg" multiple>
+
+                </select>
+            </label>
+
+            <label>
+            <script src="/js/dndgen.js"></script>
+        </main>
+        <footer>
+            <hr>
+            koofte @ Neko & Neko Labs <br>
+            Not a real company yet
+        </footer>
+    </body>
+</html>
+

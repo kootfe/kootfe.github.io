@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>How I Use Neovim - Koofte</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/navbar.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <h1 id="changeTitle" class="title">Koofte</h1>
+                <div class="navelements">
+                    <a href="/" class="nav">Home</a>
+                    <a href="/pages/abtme" class="nav">About Me</a>
+                    <a href="/pages/roadmap" class="nav">Roadmap</a>
+                    <a href="/pages/blogs" class="nav">Blogs</a>
+                    <a href="/pages/projects" class="nav">Projects</a>
+                </div>
+                <a href="/pages/menu" class="mobile-nav nav">Menu</a>
+            </div>
+            <hr>
+        </header>
+
+        <main class="blog-container">
+            <header class="blog-header">
+                <h1>Why 1 + 1 Equals to 2?</h1>
+                <div class="meta">Jan 03, 2026 | Koofte</div>
+            </header>
+            <article class="blog-content">
+                <p>Starting with this concept is funny as my first math blog, tho let me make it clear.</p>
+                <h2>Step 1: Axioms (The Rules)</h2>
+                <ul>
+                    <li>0 is a netural number.</li>
+                    <li>Each number n has successor, <span class="md">S(n)</span>.</li>
+                    <li>No number has 0 as its successor.</li>
+                    <li>Different numbers have different successors</li>
+                    <li>Induction princaple (to provbe thiings about all numbers)</li>
+                </ul>
+                <p>Here, <span class="md">S(n)</span> basically means "add 1 to n", but we haven't defined addition yet.</p>
+
+                <h2>Step 2: Define the addition recursively</h2>
+                <ul>
+                    <li>Base case: \(n + 0 = n\)</li>
+                    <li>Recursive step: \(n + S(m) = S(n + m)\)</li>
+                </ul>
+                
+                <h2>Step 3: Solving for 1+1</h2>
+                <p>So we did understand whats a addition is. about 1+1? Lets solve.</p>
+                <p class=math>\(1 = S(0)\) so: <br>
+                \(S(0) + S(0) = S(S(0) + 0)\) because \(n + S(m) = S(n+m)\) and for this \(n = S(0), S(m) = S(0) => m = 0\) <br>
+                So for this case \(S(0) + 0 = S(0)\) so <br>
+                \(S(0) + S(0) = S(S(0))\)
+                Claiming \(S(0) = 1\) Our last result will be \(1 + 1 = S(1)\) <br>
+                And since successor of 1 is 2. \(1 + 1 = S(1) = 2\) <br>
+                <strong>That was the proof</strong>
+                </p>
+
+                <h2>Step 4: Philosophy (optional)</h2>
+                <p>
+                Why is the successor of 1 called 2? Honestly, we just **call it 2**. Math is intersubjective, its what most humans agree to be correct. You cant prove 1+1, becouse its correct since we all say its true, we invent symbols and names to describe patterns we observe in reality. So was math discovered or invented? Neither fully — we discover structures but invent representations. That’s why 1+1=2, because that’s what we agreed to call it. We could just call 'lord of the potato breaker armys' to 2... it wouldnt change anything
+                </p>
+            </article>
+        </main>
+        <footer>
+            <hr>
+            <p>koofte @ Neko & Neko Labs<br>
+            Not a real company yet</p>
+        </footer>
+    </body>
+</html>
+

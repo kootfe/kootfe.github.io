@@ -1,0 +1,57 @@
+  :root{
+    --kw:#ff7ab6;     /* keywords */
+    --type:#7ad6ff;   /* types */
+    --fn:#ffd57a;     /* function names */
+    --str:#9ae6a6;    /* strings */
+    --num:#ffb86b;    /* numbers */
+  }
+
+#code {
+    background-color: rgba(0.05, 0.05, 0.05, 0.5);
+    border-left: 4px solid #ff0022;
+    width: 70%;
+    min-width: 20rem;
+    max-width: 50rem;
+    padding: 2em;
+    border-radius: 10px;
+    white-space: pre;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.kw-cd {
+    color: var(--kw);
+}
+
+.val-cd {
+    color: orange;
+}
+
+.type-cd {
+    color: var(--type);
+}
+
+.fn-cd {
+    color: var(--fn);
+}
+
+.num-cd {
+    color: var(--num);
+}
+
+.str-cd {
+    color: var(--str)
+}
+
+
+.premax {
+    background: #1a1a1a;
+    border-left: 4px solid #ff0022;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,0,34,0.2);
+    width: 70%;
+    max-width: 50rem;
+    overflow-x: auto;
+    box-sizing: border-box;
+}

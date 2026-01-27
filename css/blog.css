@@ -1,0 +1,173 @@
+/* blogs.css – bloggy version */
+
+/* === Colors & Fonts === */
+:root {
+    --bg: #121212;
+    --main-color: #ff4455;
+    --text-color: #eee;
+    --secondary: #aaa;
+    --accent-bg: #1e1e1e;
+    --code-bg: #1b1b1b;
+    --pre-bg: #251b1b;
+    --code-border: #ff0033;
+    --font-sans: "Inter", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg);
+}
+
+/* === Blog Container === */
+main.blog-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* === Blog Header === */
+.blog-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.blog-header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--main-color);
+    line-height: 1.1;
+}
+
+.blog-header .meta {
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+/* === Blog Content === */
+.blog-content p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.blog-content h2 {
+    margin: 2rem 0 1rem 0;
+    font-size: 2rem;
+    border-left: 4px solid var(--main-color);
+    padding-left: 0.5rem;
+    color: var(--main-color);
+}
+
+.blog-content h3 {
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+/* === Links === */
+.blog-content a {
+    color: var(--main-color);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-bottom: 1px dotted var(--main-color);
+}
+
+.blog-content a:hover {
+    color: #ff77aa;
+    text-shadow: 0 0 5px #ff4466;
+}
+
+/* === Images === */
+.blog-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* === Blockquotes === */
+.blog-content blockquote {
+    border-left: 4px solid var(--main-color);
+    padding-left: 1rem;
+    color: var(--secondary);
+    font-style: italic;
+    margin: 1.5rem 0;
+}
+
+h3 {
+    color: orange !important;
+}
+
+/* === Code Blocks === */
+code {
+    font-family: var(--font-mono);
+    background: var(--code-bg);
+    color: #fff;
+    border-left: 3px solid var(--code-border);
+    padding: 0.8rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    display: block;
+    margin: 1rem 0;
+}
+
+pre {
+    font-family: var(--font-mono);
+    background: var(--pre-bg);
+    color: #fff;
+    border-radius: 6px;
+    overflow-x: auto;
+    display: inline;
+    text-decoration: underline;
+}
+
+span.md {
+    white-space: pre-wrap;
+    word-break: break-word;
+    display: inline;
+    padding: 0.2rem;
+    color: purple;
+    background: #181818;
+    margin: 0;
+    border-left: none;
+}
+
+.MJX-TEX {
+    font-size: 1.2rem;
+    color: #8888ff;
+}
+
+/* === Lists === */
+.blog-content ul, .blog-content ol {
+    margin: 1rem 0 1rem 2rem;
+}
+
+.blog-content li {
+    margin: 0.5rem 0;
+}
+
+/* === Horizontal Rule === */
+.blog-content hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 2rem 0;
+}
+
+/* === Responsive tweaks === */
+@media (max-width: 600px) {
+    .blog-header h1 {
+        font-size: 2.2rem;
+    }
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+    .blog-content h3 {
+        font-size: 1.2rem;
+    }
+}
+

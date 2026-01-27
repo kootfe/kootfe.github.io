@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>How I Use Neovim - Koofte</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/navbar.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/blog.css">
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <h1 id="changeTitle" class="title">Koofte</h1>
+                <div class="navelements">
+                    <a href="/" class="nav">Home</a>
+                    <a href="/pages/abtme" class="nav">About Me</a>
+                    <a href="/pages/roadmap" class="nav">Roadmap</a>
+                    <a href="/pages/blogs" class="nav">Blogs</a>
+                    <a href="/pages/projects" class="nav">Projects</a>
+                </div>
+                <a href="/pages/menu" class="mobile-nav nav">Menu</a>
+            </div>
+            <hr>
+        </header>
+
+        <main class="blog-container">
+            <header class="blog-header">
+                <h1>Dumb Linux Commands</h1>
+                <div class="meta">Jan 03, 2026 | Koofte</div>
+            </header>
+
+            <article class="blog-content">
+                <ul>
+                    <li><h3>tac:</h3>
+                        <code>Unlike cat, which reads a file top to bottom, tac reads it from bottom to top.</code>
+                    </li>
+                    <li><h3>watch:</h3>
+                        <code>Reruns a command every X seconds, useful for monitoring changes in real time.</code>
+                    </li>
+                    <li><h3>tee:</h3>
+                        <code>Like > or >> but more advanced: reads from stdin and writes to both a file and stdout simultaneously.</code>
+                    </li>
+                    <li><h3>wc:</h3>
+                        <code>Counts characters, words, and lines in a file.</code>
+                    </li>
+                    <li><h3>join:</h3>
+                        <code>Merges two sorted files line by line.</code>
+                    </li>
+                    <li><h3>realpath:</h3>
+                        <code>Prints the absolute path of a file. (~/file → /home/user/file)</code>
+                    </li>
+                    <li><h3>basename:</h3>
+                        <code>Outputs the filename from a path. (/path/to/file.mp69 → file.mp69)</code>
+                    </li>
+                    <li><h3>dirname:</h3>
+                        <code>Opposite of <span class="md">basename</span>: returns the directory path. (/path/to/file → /path/to)</code>
+                    </li>
+                    <li><h3>more:</h3>
+                        <code>Displays file contents one screen at a time. Less is generally better.</code>
+                    </li>
+                    <li><h3>cal:</h3>
+                        <code>Displays a calendar.</code>
+                    </li>
+                    <li><h3>fmt:</h3>
+                        <code>Wraps text to a specified width, preserving words. Maximum X characters per line.</code>
+                    </li>
+                    <li><h3>factor:</h3>
+                        <code>Breaks numbers into their prime factors.</code>
+                    </li>
+                    <li><h3>nice:</h3>
+                        <code>
+                            Sets the priority of a command. Usage: <span class="md">nice -n priority command;</span>  
+                            Lower the number → higher priority. Only root can use negative niceness. Example:  
+                            <span class="md">nice -n 5 discord &amp;&amp; nice -n 15 steam</span>  
+                            Discord gets higher CPU priority than Steam.
+                        </code>
+                    </li>
+                    <li><h3>sort:</h3>
+                        <code>Sorts lines in a file. Options: -h for human-readable (sizes), -u for unique lines.</code>
+                    </li>
+                    <li><h3>comm:</h3>
+                        <code>Compares two sorted files line by line.</code>
+                    </li>
+                    <li><h3>uniq:</h3>
+                        <code>Removes duplicate lines and optionally counts occurrences.</code>
+                    </li>
+                    <li><h3>mktemp:</h3>
+                        <code>Creates temporary files in /tmp with unique names. Does not auto-delete.</code>
+                    </li>
+                    <li><h3>xargs:</h3>
+                        <code>
+                            Takes output from one command and passes it as arguments to another. Example:  
+                            <span class="md">echo "file1 file2" | xargs rm</span>  
+                            Unlike a simple pipe, some commands (like rm) need arguments, not stdin input.
+                        </code>
+                    </li>
+                    <li><h3>yes:</h3>
+                        <code>Prints "yes" (or a custom string) repeatedly. Useful for automating inputs or stress-testing CPU.</code>
+                    </li>
+                    <li><h3>pv:</h3>
+                        <code>Pipe viewer: shows progress of data through a pipeline.</code>
+                    </li>
+                </ul>
+            </article>
+        </main>
+        <footer>
+            <hr>
+            <p>koofte @ Neko & Neko Labs<br>
+            Not a real company yet</p>
+        </footer>
+    </body>
+</html>
+

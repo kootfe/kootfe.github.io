@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Koofte - AJG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/navbar.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/doc.v1.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <h1 id="changeTitle" class="title">Koofte - AJG</h1>
+                <div class="navelements">
+                    <a href="/" class="nav">Home</a>
+                    <a class="nav" href="/beta/ajg/intro">Document</a>
+                </div>
+                <a href="/beta/ajg/menu" class="mobile-nav nav">Menu</a>
+            </div>
+            <hr>
+        </header>
+        <main>
+            <h2>Complete Command List</h2>
+            <p>For a step-by-step tutorial, click <a href="">here</a>.</p>
+
+            <h3>Allow</h3>
+            <section class="docelm">
+                <h4 class="cmd">Allow path positions</h4>
+                <p class="desc">Restricts units to move only through the specified positions.</p>
+                <table class="parmtab">
+                    <tr class="parmexp">
+                        <td>Parameter</td>
+                        <td>Value</td>
+                        <td>Explanation</td>
+                        <td>Note</td>
+                    </tr>
+                    <tr class="parmval">
+                        <th>POS_LIST</th>
+                        <td>x1,y1_x2,y2</td>
+                        <td>Example: 0,4_1,2 means one allowed tile at (0,4) and another at (1,2).</td>
+                        <td>Coordinates start at 0x0 in the top-left corner.</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="docelm">
+                <h4 class="cmd">Allow click_on_tile</h4>
+                <p class="desc">Controls whether certain tiles can be clicked.</p>
+                <table class="parmtab">
+                    <tr class="parmexp">
+                        <td>Parameter</td>
+                        <td>Value</td>
+                        <td>Explanation</td>
+                        <td>Note</td>
+                    </tr>
+                    <tr class="parmval">
+                        <th>all</th>
+                        <td>-</td>
+                        <td>Allows clicking every tile.</td>
+                        <td>-</td>
+                    </tr>
+                    <tr class="parmval">
+                        <th>none</th>
+                        <td>-</td>
+                        <td>Blocks clicking on all tiles.</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th>position</th>
+                        <td>x,y</td>
+                        <td>Allows clicking only on the tile at that specific coordinate.</td>
+                        <td>0x0 is the top-left tile.</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="docelm">
+                <h4 class="cmd">Allow path</h4>
+                <p class="desc">Enables or blocks all unit movement paths.</p>
+                <table class="parmtab">
+                    <tr class="parmexp">
+                        <td>value</td>
+                        <td>explanation</td>
+                    </tr>
+                    <tr class="parmval">
+                        <th>all</th>
+                        <td>Units can move on any valid path.</td>
+                    </tr>
+                    <tr class="parmval">
+                        <th>none</th>
+                        <td>Units cannot move anywhere.</td>
+                    </tr>
+                </table>
+            </section>
+
+            <h3>Dialogue</h3>
+            <section class="docelm">
+                <h4 class="cmd">Dialogue continue</h4>
+                <p class="desc">Moves forward to the next part of the dialogue.</p>
+            </section>
+
+            <h3>Disable</h3>
+            <section class="docelm">
+                <h4 class="cmd">Disable</h4>
+                <p class="desc">Turns off specific UI elements or interactions.</p>
+                <table class="parmtab">
+                    <tr class="parmexp">
+                        <td>value</td>
+                        <td>explanation</td>
+                    </tr>
+                    <tr class="parmval">
+                        <th>end_turn_button</th>
+                        <td>Disables the “End Turn” button.</td>
+                    </tr>
+                    <tr class="parmval">
+                        <th>map_interactions</th>
+                        <td>Blocks all interactions with the map.</td>
+                    </tr>
+                    <tr class="parmval">
+                        <th>start_turn_popup</th>
+                        <td>Hides the start-of-turn popup.</td>
+                    </tr>
+                    <tr class="parmval">
+                        <th>cancel_on_transport</th>
+                        <td>Disables the cancel button shown when selecting a transport unit.</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <hr>
+            koofte @ Neko & Neko Labs <br>
+            Not a real company yet
+        </footer>
+    </body>
+</html>
+
