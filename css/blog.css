@@ -9,8 +9,7 @@
     --accent-bg: #1e1e1e;
     --code-bg: #1b1b1b;
     --pre-bg: #251b1b;
-    --code-border: #ff0033;
-    --font-sans: "Inter", sans-serif;
+    --code-border: #ff0033; --font-sans: "Inter", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
 }
 
@@ -104,6 +103,13 @@ h3 {
 
 /* === Code Blocks === */
 code {
+    display: inline;
+    font-family: var(--font-mono);
+    background: var(--pre-bg);
+    color: #fff;
+}
+
+pre {
     font-family: var(--font-mono);
     background: var(--code-bg);
     color: #fff;
@@ -113,16 +119,6 @@ code {
     overflow-x: auto;
     display: block;
     margin: 1rem 0;
-}
-
-pre {
-    font-family: var(--font-mono);
-    background: var(--pre-bg);
-    color: #fff;
-    border-radius: 6px;
-    overflow-x: auto;
-    display: inline;
-    text-decoration: underline;
 }
 
 span.md {

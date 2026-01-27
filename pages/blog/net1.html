@@ -1,100 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Networking Video 1 - Koofte</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <title>Networking Video 1 - Koofte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="codeconnect" href="https://fonts.googleapis.com">
+    <link rel="codeconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="/css/navbar.css">
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/blog.css">
-    </head>
-    <body>
-        <header>
-            <div class="navbar">
-                <h1 id="changeTitle" class="title">Koofte</h1>
-                <div class="navelements">
-                    <a href="/" class="nav">Home</a>
-                    <a href="/pages/abtme" class="nav">About Me</a>
-                    <a href="/pages/roadmap" class="nav">Roadmap</a>
-                    <a href="/pages/blogs" class="nav">Blogs</a>
-                    <a href="/pages/projects" class="nav">Projects</a>
-                </div>
-                <a href="/pages/menu" class="mobile-nav nav">Menu</a>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 id="changeTitle" class="title">Koofte</h1>
+            <div class="navelements">
+                <a href="/" class="nav">Home</a>
+                <a href="/pages/abtme" class="nav">About Me</a>
+                <a href="/pages/roadmap" class="nav">Roadmap</a>
+                <a href="/pages/blogs" class="nav">Blogs</a>
+                <a href="/pages/projects" class="nav">Projects</a>
             </div>
-            <hr>
+            <a href="/pages/menu" class="mobile-nav nav">Menu</a>
+        </div>
+        <hr>
+    </header>
+
+    <main class="blog-container">
+        <header class="blog-header">
+            <h1>Networking: IP, NAT, and Neighborhoods</h1>
+            <div class="meta">Jan 28, 2026 | Koofte</div>
         </header>
 
-        <main class="blog-container">
-            <header class="blog-header">
-                <h1>Networking: IP, NAT, and Neighborhoods</h1>
-                <div class="meta">Jan 28, 2026 | Koofte</div>
-            </header>
+        <article class="blog-content">
+            <p>Hello there.</p>
 
-            <article class="blog-content">
-                <p>Hello there. Today, we are diving into the world of <strong>Networking</strong>. A friend of mine is getting into DevOps and asked for help, so I’m making this series for him—and for you! If you hate DevOps... well, you can keep hating it. I do too. LOL. But you still gotta learn it!</p>
-                
-                <p>In this series, we’re covering everything from IP addresses to WebSockets and custom protocols. Let’s roll!</p>
+            <p>Today, we are diving into the world of <strong>Networking</strong>. A friend of mine is getting into DevOps and asked for help, so I’m making this series for him—and for you! If you hate DevOps... well, you can keep hating it. I do too. LOL. But you still gotta learn it!</p>
 
-                <h2>IP and Ports: The Apartment Analogy</h2>
-                <p>When people talk about networking, two things usually come up: <strong>IP</strong> and <strong>Port</strong>. (And MAC addresses if you’re a weirdo, but let’s skip that for now).</p>
-                
-                
+            <p>In this series, we’re covering everything from IP addresses to WebSockets and custom protocols. Let’s roll!</p>
 
-                <p>Think of an <strong>IP Address</strong> like a building's street address. If I send data to <pre>1.1.1.1</pre>, that’s your house!</p>
-                
-                <p>But wait... because of how the modern world works, we aren’t living in single-family houses. We’re living in <strong>apartments</strong>. If the IP is the building address, the <strong>Port</strong> is the apartment number. Every transport protocol - yeah there is protocols of internet that does not carry data but do other things - has <strong>65,536</strong> available ports. So, if I send data to <pre>1.1.1.1:8080</pre>, I’m sending a package to Building 1.1.1.1, Apartment 8080. Simple, right?</p>
+            <p>When people talk about networking, two things usually come up: <strong>IP</strong> and <strong>Port</strong>. (And MAC addresses if you’re a weirdo, but let’s skip that for now).</p>
 
-                <h2>IPv4 vs. IPv6</h2>
-                <p>Wait, I said <pre>1.1.1.1</pre>, but you might see <pre>abcd:abcd:abcd:abcd:abcd:abcd:abcd:abcd</pre>... or just <pre>abcd::</pre>. Congrats, you’ve found <strong>IPv6</strong>.</p>
-                
-                <p>Why does it exist? Not because IPv4 sucks, but because we ran out of them. However, most DevOps and IT people hate IPv6. A wise IT guy once said: <em>"If your client wants you to set up IPv6 and TLS, just cut the Ethernet cable to enable the firewall."</em></p>
+            <p>Think of an <strong>IP Address</strong> like a building's street address. If I send data to <code>1.1.1.1</code>, that’s your house!</p>
 
-                <h2>Neighborhoods: WAN vs. LAN</h2>
-                <ul>
-                    <li><strong>WAN (Wide Area Network):</strong> This is the Internet. The big, scary outside world. Google, YouTube, and that weird forum you visit at 3 AM? That’s all WAN.</li>
-                    <li><strong>LAN (Local Area Network):</strong> This is your private 'inner circle.' It’s the network inside your house managed by your router.</li>
-                </ul>
+            <p>But wait... because of how the modern world works, we aren’t living in single-family houses. We’re living in <strong>apartments</strong>. If the IP is the building address, the <strong>Port</strong> is the apartment number. Every transport protocol—yeah there are protocols of the internet that don’t carry data but do other things—has <strong>65,536</strong> available ports. So, if I send data to <code>1.1.1.1:8080</code>, I’m sending a package to Building 1.1.1.1, Apartment 8080. Simple, right?</p>
 
-                <h2>NAT: The Gatekeeper</h2>
-                
-                <p>IPv4 addresses are running out. NAT is the 'gatekeeper' that lets an entire household share <strong>one single Public IP</strong>.</p>
-                
-                <ol>
-                    <li><strong>Loopback (<pre>127.0.0.0</pre> - <pre>127.255.255.255</pre>):</strong> This is 'Home.' Data sent here never leaves your computer.</li>
-                    <li><strong>Private IPs (<pre>192.168.x.x</pre>):</strong> These are the addresses your router gives out. Your phone might be <pre>192.168.1.5</pre> and your PC <pre>192.168.1.10</pre>.</li>
-                </ol>
+            <p>Wait, I said <code>1.1.1.1</code>, but you might see <code>abcd:abcd:abcd:abcd:abcd:abcd:abcd:abcd</code>... or just <code>abcd::</code>. Congrats, you’ve found <strong>IPv6</strong>.</p>
 
-                <h2>The Series Roadmap</h2>
-                <p>Here is the plan for the upcoming blogs:</p>
-                <ul>
-                    <li>1. What is IP, IPv4, IPv6, Nat, LAN, WAN.</li>
-                    <li>2. OSI Model and Tcp/Ip model.</li>
-                    <li>3. What is tcp udp and traceroute.</li>
-                    <li>4. Domain Name Server (DNS).</li>
-                    <li>5. What is HTTP?</li>
-                    <li>6. What is HTTPS? (TLS/SSL).</li>
-                    <li>7. Web Sockets.</li>
-                    <li>8. NAT types.</li>
-                    <li>9. CGNAT and Port Forwarding issues.</li>
-                    <li>10. Custom protocols.</li>
-                    <li>11. IPv5?</li>
-                    <li>12. Common ports.</li>
-                    <li>13. Endians (Little and Big).</li>
-                </ul>
+            <p>Why does it exist? Not because IPv4 sucks, but because we ran out of them. However, most DevOps and IT people hate IPv6. A wise IT guy once said: <em>"If your client wants you to set up IPv6 and TLS, just cut the Ethernet cable to enable the firewall."</em></p>
 
-                <p>Well as you swear old geezers about making <pre>networking</pre> this weird... I'm going to sleep. Cya.</p>
-            </article>
-        </main>
+            <p>It works perfectly fine with TLS—it genuinely doesn't care—but it’s a total pain in the ass to debug. IPv4 is exhausted; we literally cannot give new IPv4 addresses to everyone. That’s why things like <strong>NAT</strong> exist. IPv6 is massive and designed to work without NAT. Using NAT with IPv6 is like inventing a car to go faster but hitching a horse to the front of it. It kills the purpose!</p>
 
-        <footer>
-            <hr>
-            <p>koofte @ Neko & Neko Labs<br>
-            Not a real company yet</p>
-        </footer>
-    </body>
+            <h2>Neighborhoods: WAN vs. LAN</h2>
+            <ul>
+                <li><strong>WAN (Wide Area Network):</strong> The Internet. Google, YouTube, and that weird forum you visit at 3 AM? That’s all WAN.</li>
+                <li><strong>LAN (Local Area Network):</strong> Your private 'inner circle.' The network inside your house managed by your router. You don’t even need the internet to have a LAN; two computers can talk via a cable.</li>
+            </ul>
+
+            <h2>Loopback</h2>
+            <p><strong>Loopback (<code>127.0.0.1</code>)</strong>: This is 'Home.' Data sent here never leaves your computer. It’s like talking to yourself in the mirror—you shout, you hear it, nobody else can. (Fun fact: the whole <code>127.x.x.x</code> range, more than 16 million IPs, is reserved for this.)</p>
+
+            <h2>NAT: The Gatekeeper</h2>
+            <p>IPv4 addresses are running out. NAT is the 'gatekeeper' that lets an entire household share <strong>one single Public IP</strong>.</p>
+
+            <p><strong>Private IPs (<code>192.168.x.x</code>)</strong>: These are the addresses your router gives out. Your phone might be <code>192.168.1.5</code> and your PC <code>192.168.1.10</code>. These are invisible to the outside world. More like… it never even leaves their router if they send a request. But that’s up to them, not you.</p>
+
+            <p><strong>The Middleman:</strong> When your PC wants to visit Google, it sends a request to your router. The router goes, “Okay, I’ll go get that for you.” It uses the public IP to get the data back to your PC.</p>
+
+            <p>Because of NAT, you can have 200 devices in your house, but the internet only sees <strong>one</strong> address. Peak human engineering—or a clever hack to keep IPv4 alive!</p>
+
+            <h2>Port Forwarding</h2>
+            <p>If you’re new, port forwarding sounds scary. If you’ve been doing DevOps for 10 years, it still scares you.</p>
+            <p>Here’s the deal: your router has 1 public IP, but many devices inside with private IPs. When traffic comes to <code>publicIP:port</code>, the router doesn’t know which device to send it to. Port forwarding fixes that: you tell the router, “if anyone comes to port 443, send it to my PC at 192.168.1.10:443.”</p>
+
+            <h2>Fun Facts</h2>
+            <ul>
+                <li>Encrypted data is like shouting an inside joke on the street—everyone sees it going somewhere, but only the friend understands.</li>
+                <li>The router keeps a NAT table to track connections, making sure responses go to the right device—like customs checking packages.</li>
+            </ul>
+
+            <p>Well, as you swear about networking being weird… I’m going to sleep. Cya.</p>
+
+            <h2>Video Series Roadmap</h2>
+            <ol>
+                <li>What is IP, IPv4, IPv6, NAT, LAN, WAN. And how devices talk together.</li>
+                <li>OSI Model and TCP/IP model.</li>
+                <li>What is TCP/UDP and how they work (traceroute included).</li>
+                <li>Domain Name Server, Root Server, TLD Server.</li>
+                <li>What is HTTP? How it works?</li>
+                <li>What is HTTPS? Difference between TLS and SSL.</li>
+                <li>What are WebSockets?</li>
+                <li>NAT types (full cone and others).</li>
+                <li>How CGNAT works and why you can’t do port forwarding.</li>
+                <li>How to create a custom protocol.</li>
+                <li>IPv5?</li>
+                <li>Common ports and how they work.</li>
+                <li>Little and Big Endians.</li>
+            </ol>
+        </article>
+    </main>
+
+    <footer>
+        <hr>
+        <p>koofte @ Neko & Neko Labs<br>
+        Not a real company yet</p>
+    </footer>
+</body>
 </html>
+
