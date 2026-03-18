@@ -11,8 +11,13 @@ const projects = [
     },
     {
         title: "Log",
-        desc: "Probaly overengineered logger",
+        desc: "Probably overengineered logger",
         path: "log"
+    },
+    {
+        title: "EnvRD",
+        desc: "An environment variable reader for linux",
+        path: "envrd"
     }
 ];
 
